@@ -7,4 +7,9 @@ services:
             - ./product:/usr/src/app
         ports:
             - 5000:5000
-
+    consumer-service:
+        build: ./consumer
+        volumes:
+            - ./consumer:/usr/src/app
+        depends_on:
+            - product-service
